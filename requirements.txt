@@ -1,0 +1,9 @@
+dataclasses; python_version < '3.7'
+yfinance
+pandas
+fastapi
+uvicorn
+pytest
+langchain
+langgraph
+openai
