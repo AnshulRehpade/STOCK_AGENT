@@ -7,7 +7,7 @@ except ImportError:
     StateGraph = None
 
 from agent.market_simulation import build_default_simulation, simulation_summary_to_dict
-from agent.data_ingestion import get_technical_trend
+from agent.data_ingestion import get_technical_trend, is_sp500_ticker
 
 
 class MarketGraphState(TypedDict):
@@ -24,6 +24,10 @@ def run_stock_agent(query: str):
             if clean_token.isalpha() and 1 <= len(clean_token) <= 5 and clean_token.isupper():
                 ticker = clean_token
                 break
+        if not is_sp500_ticker(ticker):
+            return {
+                "message": f"{ticker} is outside the S&P 500 universe. Please use an S&P 500 ticker symbol."
+            }
         try:
             from agent.tools import technical_trend_tool
 

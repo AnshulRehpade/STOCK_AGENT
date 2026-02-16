@@ -5,6 +5,8 @@ from typing import List, Optional
 class TechnicalTrend:
     sma5: float
     sma10: float
+    momentum_20d: Optional[float] = None
+    volatility_20d: Optional[float] = None
 
 @dataclass
 class CompanyNews:

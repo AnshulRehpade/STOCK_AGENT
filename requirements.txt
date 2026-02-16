@@ -1,9 +1,11 @@
 dataclasses; python_version < '3.7'
 yfinance
 pandas
+requests
 fastapi
 uvicorn
 pytest
 langchain
 langgraph
 openai
+python-dotenv

@@ -27,3 +27,9 @@ htmlcov/
 # OS/editor
 .DS_Store
 .vscode/
+
+# Local secrets
+.env
+
+# Generated data
+agent/data/sp500_prices_5y.csv
